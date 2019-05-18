@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapa da Minha Vizinhança | Centro Histórico São Luís</title>
+
+    <!-- Mobile Meta -->
+<meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+    <main>          
+      <div class="container-fluid">
+        <div class="col-md-12">
+
+          <div class="row">
+
+            <div class="col-sm-4">
+              <div class="search-area text-center form-group">
+            <input id="filter" class="form-control" type="text" data-bind="textInput: searchTerm" placeholder="Buscar">
+</div>
+            <ul class="nav flex-column">
+                <!-- ko foreach: filtraLoc -->
+		<li class="nav-item">
+                  <a class="nav-link active" href="#" data-bind="text: name, css: { active: active }, click: selectLocal"></a>
+                <!-- /ko -->
+		</li>
+	        <li data-bind="visible: filtraLoc().length == 0" style="cursor:auto;">Sem resultados</li>
+		
+            </ul>
+
+        </div>
+
+        <div id="map-container">
+            <div id="map"></div>
+        </div>
+        </div>
+</div>
+      </div>
+    </main>
+  
+
+    <!-- Scripts -->
+    <script type='text/javascript' src='library/jquery/dist/jquery.min.js?ver=3.4.0'></script>
+    <script type='text/javascript' src='library/knockout/dist/knockout.js?ver=3.0.0'></script>
+    <script type='text/javascript' src='static/js/project.js'></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3Yr4nBt-Xpt19qFNF2E5K3gjTF5vrxiE&callback=app" async defer onerror="googleMapsApiErrorHandler();"></script>
+
+</body>
+</html>
