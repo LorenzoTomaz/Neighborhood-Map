@@ -9,8 +9,8 @@ O objetivo do projeto foi construir um mapa de um bairro usando um framework MVC
 
 ## Começando
 
-- Clone o repositório
-- Abra `index.html`
+- Clone o repositório: 
+- Abra `index.html` com o auxilio de um navegador como Chrome ou Firefox
 
 
 
