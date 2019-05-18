@@ -95,14 +95,14 @@ var Location = function(location) {
                 }
             }
             if (wikiCont !== '') {
-                self.content = ko.observable('<h4>Resultados da Wiki para "' + self.name() + '"</h4><p>' + wikiCont + '</p>');                 
+                self.content = ko.observable('<h6>Resultados da Wiki para "' + self.name() + '"</h6><p>' + wikiCont + '</p>');                 
             } else {
-                self.content = ko.observable('<h4>Resultados da Wiki para "' + self.name() + '"</h4><p>Houve um problema no acesso</p>');                 
+                self.content = ko.observable('<h6>Resultados da Wiki para "' + self.name() + '"</h6><p>Houve um problema no acesso</p>');                 
             }
         })
         .fail(function() {
             console.log("erro no call do ajax");
-            self.content = ko.observable('<h4>Resultados da Wiki para  "' + self.name() + '"</h4><p>Houve um problema no acesso</p>');                 
+            self.content = ko.observable('<h6>Resultados da Wiki para  "' + self.name() + '"</h6><p>Houve um problema no acesso</p>');                 
         })
         .always(function() {
             if (typeof callback !== "undefined"){
@@ -110,7 +110,7 @@ var Location = function(location) {
             }
         });
 	// retorna resultados de busca na wiki
-        return '<h4>Resultados da Wiki para "' + self.name() + '"</h4><p><span class="spinner"></span></p>';
+        return '<h6>Resultados da Wiki para "' + self.name() + '"</h6><p><span class="spinner"></span></p>';
     };
         
 
